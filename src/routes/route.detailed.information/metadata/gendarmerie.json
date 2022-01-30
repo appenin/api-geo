@@ -1,0 +1,208 @@
+{
+    "acronym": "base",
+    "archived": null,
+    "badges": [
+      
+    ],
+    "created_at": "2022-03-01T11:16:53.477000",
+    "deleted": null,
+    "description": "Dans le cadre de leur activité judiciaire, les services de police et de gendarmerie rédigent des procédures relatives à des infractions avant de les transmettre à l’autorité judiciaire qui est susceptible de les requalifier, pendant ou après l’enquête. Ces infractions ont pu être constatées suite à une plainte, à un signalement, à un témoignage, à un flagrant délit, à une dénonciation ou encore sur l’initiative des forces de sécurité. Les informations recueillies via une main courante n’y sont pas intégrées. Enfin, les infractions relevées par d’autres services (douanes, offices environnementaux, etc.) n’y figurent pas non plus.\n\nDepuis 1972, les services de sécurité (police et gendarmerie) se sont dotées d’un outil standardisé de mesure de l’activité judiciaire des services basé sur des comptages mensuels, appelé « État 4001 ». Ce document administratif porte sur les crimes et les délits (à l’exclusion des contraventions et des délits routiers), enregistrés pour la première fois par les forces de sécurité et portés à la connaissance de l’institution judiciaire. Les infractions y sont classées en 107 catégories (appelés « index »), très hétérogènes par la nature et la gravité des faits, mais aussi par le nombre d’infractions constatées chaque mois. Selon l’index, l’unité de compte retenue peut varier : elle peut être la victime par exemple en matière de violence sexuelle, l’auteur par exemple en matière d’usage ou d’usage revente de stupéfiants ou encore le véhicule en matière de vol de véhicule, etc. Cela implique qu’il n’est pas pertinent de constituer des agrégats regroupant des index n’ayant pas la même unité de compte.\n\nDepuis sa création fin 2014, le Service statistique ministériel de la sécurité intérieure ([SSMSI](https://www.interieur.gouv.fr/Interstats/Qui-sommes-nous)) expertise et fiabilise ces différents index et diffuse des indicateurs choisis et construits à partir de regroupements de ces index. Par ailleurs, depuis 2016, l’exploitation de données plus détaillées que les index de l’Etat 4001 ont permis au SSMSI de construire des indicateurs supplémentaires, par exemple sur le champ des violences physiques intrafamiliales, etc… \n\n**Afin de favoriser l’ouverture des données sur la délinquance et l’insécurité, le SSMSI met à disposition deux bases de données annuelles sur les principaux indicateurs des crimes et délits enregistrés par la police et la gendarmerie nationales, depuis 2016 : l’une à l’échelle communale et l’autre à l’échelle départementale , toutes deux selon le lieu de commission.** \nCes bases de données ont vocation à être enrichies au fur et à mesure que les données pour d’autres indicateurs seront fiabilisées (escroqueries, destructions/dégradations volontaires, infractions à la législation sur les stupéfiants…).\n\nLes données diffusées sont limitées aux communes pour lesquelles plus de 5 faits ont été enregistrés pendant 3 années successives. Cette précaution est motivée : d’une part par la fragilité des estimations sur des communes qui enregistrent peu de faits de délinquance (cf. infra Interstats Analyse n°44, mars 2022), d’autre part par le secret statistique qui ne doit pas permettre, par le croisement de multiples sources, de déduire des informations individuelles sur les personnes concernées dans ces procédures. Cette précaution doit notamment être appréciée au regard de la sensibilité de certaines atteintes comme les violences sexuelles. La base de données diffusée fournit également l'information sur l'absence de faits enregistrés lorsqu’elle se reproduit sur 3 années successives.  \n\nOutre les indicateurs des crimes et délits, la base communale comporte des données informatives relatives à la commune où se sont produits les faits, telles que les codes officiels géographiques de la commune, du département et de la région d’appartenance, leurs libellés respectifs, les populations résidentes correspondantes,… (pour plus de détails se référer à l’espace Documentation ci-dessous)\n\nRetrouvez l’analyse de la géographie de la délinquance à l’échelle communale sur le site Interstats du SSMSI via le lien suivant : [https://www.interieur.gouv.fr/Interstats/Publications/Interstats-Analyse/Geographie-de-la-delinquance-a-l-echelle-communale-Interstats-Analyse-N-44](https://www.interieur.gouv.fr/Interstats/Publications/Interstats-Analyse/Geographie-de-la-delinquance-a-l-echelle-communale-Interstats-Analyse-N-44)\n\n\n**Dernière mise à jour :** septembre 2022\n\n",
+    "extras": {
+      
+    },
+    "frequency": "annual",
+    "frequency_date": "2023-03-01T11:15:12",
+    "harvest": null,
+    "id": "621df2954fa5a3b5a023e23c",
+    "last_modified": "2022-09-12T16:11:59.160000",
+    "last_update": "2022-09-12T16:09:28.669000",
+    "license": "lov2",
+    "metrics": {
+      "discussions": 0,
+      "followers": 6,
+      "reuses": 5,
+      "views": 5243
+    },
+    "organization": {
+      "acronym": null,
+      "badges": [
+        {
+          "kind": "public-service"
+        },
+        {
+          "kind": "certified"
+        }
+      ],
+      "class": "Organization",
+      "id": "534fff91a3a7292c64a77f53",
+      "logo": "https://static.data.gouv.fr/avatars/64/efa546af334b4cbf07e36f694db4fe-original.png",
+      "logo_thumbnail": "https://static.data.gouv.fr/avatars/64/efa546af334b4cbf07e36f694db4fe-100.png",
+      "name": "Ministère de l'Intérieur et des Outre-Mer",
+      "page": "https://www.data.gouv.fr/fr/organizations/ministere-de-linterieur-et-des-outre-mer/",
+      "slug": "ministere-de-linterieur-et-des-outre-mer",
+      "uri": "https://www.data.gouv.fr/api/1/organizations/ministere-de-linterieur-et-des-outre-mer/"
+    },
+    "owner": null,
+    "page": "https://www.data.gouv.fr/fr/datasets/bases-communale-et-departementale-des-principaux-indicateurs-des-crimes-et-delits-enregistres-par-la-police-et-la-gendarmerie-nationales/",
+    "private": false,
+    "quality": {
+      "all_resources_available": true,
+      "dataset_description_quality": true,
+      "has_open_format": true,
+      "has_resources": true,
+      "license": true,
+      "resources_documentation": true,
+      "score": 1.0,
+      "spatial": true,
+      "temporal_coverage": true,
+      "update_frequency": true,
+      "update_fulfilled_in_time": true
+    },
+    "resources": [
+      {
+        "checksum": {
+          "type": "sha1",
+          "value": "91f5e45a8fbffba59e9029b46c86c5e052544c6e"
+        },
+        "created_at": "2022-06-09T15:17:00.865000",
+        "description": "_**Historique des mises à jour:**_\n\n_12 septembre 2022:_\nLes données suivent la géographie des communes au premier janvier 2022. Elles sont calées sur le rapport \"Insécurité et délinquance en 2021 : bilan statistique\" publié le 30 juin 2022 par le SSMSI. Ce rapport présente la refonte des bases statistiques menée pour cette édition (cf. premier éclairage complémentaire et Sources et méthodes - [Insecurite-et-delinquance-en-2021-bilan-statistique](https://www.interieur.gouv.fr/Interstats/Publications/Hors-collection/Insecurite-et-delinquance-en-2021-bilan-statistique)). Cette refonte inclut une expertise sur les communes homonymes.\n\n_10 juin 2022:_\nRectification de la valeur de certains taux départementaux de délinquance pour 1000 habitants/logements\nPour les départements de Paris, du Rhône et des Bouches-du-Rhône, les habitants/logements de Paris, Lyon et Marseille ont été comptés en double (en sommant la population de la commune et celle de ses arrondissements). Ceci a induit une erreur dans les taux de délinquance pour 1 000 habitants/logements de ces départements.",
+        "extras": {
+          
+        },
+        "filesize": 187116,
+        "filetype": "file",
+        "format": "csv.gz",
+        "harvest": null,
+        "id": "acc332f6-92be-42af-9721-f3609bea8cfc",
+        "last_modified": "2022-09-12T16:07:18.569000",
+        "latest": "https://www.data.gouv.fr/fr/datasets/r/acc332f6-92be-42af-9721-f3609bea8cfc",
+        "metrics": {
+          "views": 1984
+        },
+        "mime": "text/csv",
+        "preview_url": "https://explore.data.gouv.fr/?url=https%3A%2F%2Fwww.data.gouv.fr%2Ffr%2Fdatasets%2Fr%2Facc332f6-92be-42af-9721-f3609bea8cfc",
+        "published": "2022-06-09T15:17:00",
+        "schema": {
+          
+        },
+        "title": "base départementale des principaux indicateurs des crimes et délits enregistrés par la police et la gendarmerie nationales ",
+        "type": "main",
+        "url": "https://static.data.gouv.fr/resources/bases-communale-et-departementale-des-principaux-indicateurs-des-crimes-et-delits-enregistres-par-la-police-et-la-gendarmerie-nationales/20220912-160703/donnee-dep-data.gouv-2021-geographie2022-produit-le2022-07-27.csv.gz"
+      },
+      {
+        "checksum": {
+          "type": "sha1",
+          "value": "62757c5cd6adbe21c540361fb45c4048afe0b64f"
+        },
+        "created_at": "2022-03-08T14:45:35.715000",
+        "description": "_**Historique des mises à jour:**_\n\n_12 septembre 2022:_\nLes données suivent la géographie des communes au premier janvier 2022. Elles sont calées sur le rapport \"Insécurité et délinquance en 2021 : bilan statistique\" publié le 30 juin 2022 par le SSMSI. Ce rapport présente la refonte des bases statistiques menée pour cette édition (cf. premier éclairage complémentaire et Sources et méthodes - [Insecurite-et-delinquance-en-2021-bilan-statistique](https://www.interieur.gouv.fr/Interstats/Publications/Hors-collection/Insecurite-et-delinquance-en-2021-bilan-statistique)). Cette refonte inclut une expertise sur les communes homonymes.\n",
+        "extras": {
+          
+        },
+        "filesize": 2985506,
+        "filetype": "file",
+        "format": "xlsx",
+        "harvest": null,
+        "id": "16ec626b-1a15-4512-a8ca-774921fc969e",
+        "last_modified": "2022-09-12T16:08:29.812000",
+        "latest": "https://www.data.gouv.fr/fr/datasets/r/16ec626b-1a15-4512-a8ca-774921fc969e",
+        "metrics": {
+          "views": 589
+        },
+        "mime": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        "preview_url": "https://explore.data.gouv.fr/?url=https%3A%2F%2Fwww.data.gouv.fr%2Ffr%2Fdatasets%2Fr%2F16ec626b-1a15-4512-a8ca-774921fc969e",
+        "published": "2022-03-08T14:45:35",
+        "schema": {
+          
+        },
+        "title": "Fichier complémentaire à la base communale des principaux indicateurs des crimes et délits enregistrés par la police et la gendarmerie nationales ",
+        "type": "main",
+        "url": "https://static.data.gouv.fr/resources/bases-communale-et-departementale-des-principaux-indicateurs-des-crimes-et-delits-enregistres-par-la-police-et-la-gendarmerie-nationales/20220912-160817/info-complements-data.gouv-2021-geographie2022-produit-le2022-07-27.xlsx"
+      },
+      {
+        "checksum": {
+          "type": "sha1",
+          "value": "a8c6f16b80611a96a8ae71cba7a44fa227a0894b"
+        },
+        "created_at": "2022-03-01T14:39:52.281000",
+        "description": "_**Historique des mises à jour:**_\n\n_12 septembre 2022:_\nLes données suivent la géographie des communes au premier janvier 2022. Elles sont calées sur le rapport \"Insécurité et délinquance en 2021 : bilan statistique\" publié le 30 juin 2022 par le SSMSI. Ce rapport présente la refonte des bases statistiques menée pour cette édition (cf. premier éclairage complémentaire et Sources et méthodes - [Insecurite-et-delinquance-en-2021-bilan-statistique](https://www.interieur.gouv.fr/Interstats/Publications/Hors-collection/Insecurite-et-delinquance-en-2021-bilan-statistique)). Cette refonte inclut une expertise sur les communes homonymes.\n",
+        "extras": {
+          
+        },
+        "filesize": 30614562,
+        "filetype": "file",
+        "format": "csv.gz",
+        "harvest": null,
+        "id": "3f51212c-f7d2-4aec-b899-06be6cdd1030",
+        "last_modified": "2022-09-12T16:09:28.669000",
+        "latest": "https://www.data.gouv.fr/fr/datasets/r/3f51212c-f7d2-4aec-b899-06be6cdd1030",
+        "metrics": {
+          "views": 964
+        },
+        "mime": "text/csv",
+        "preview_url": "https://explore.data.gouv.fr/?url=https%3A%2F%2Fwww.data.gouv.fr%2Ffr%2Fdatasets%2Fr%2F3f51212c-f7d2-4aec-b899-06be6cdd1030",
+        "published": "2022-03-01T14:39:52",
+        "schema": {
+          
+        },
+        "title": "base communale des principaux indicateurs des crimes et délits enregistrés par la police et la gendarmerie nationales",
+        "type": "main",
+        "url": "https://static.data.gouv.fr/resources/bases-communale-et-departementale-des-principaux-indicateurs-des-crimes-et-delits-enregistres-par-la-police-et-la-gendarmerie-nationales/20220912-160915/donnee-data.gouv-2021-geographie2022-produit-le2022-07-27.csv.gz"
+      },
+      {
+        "checksum": {
+          "type": "sha1",
+          "value": "4d8e1ffea245ce4bac93b0df24ef191526b3ff43"
+        },
+        "created_at": "2022-03-01T14:38:00.490000",
+        "description": null,
+        "extras": {
+          
+        },
+        "filesize": 36073,
+        "filetype": "file",
+        "format": "docx",
+        "harvest": null,
+        "id": "a6919d2f-f4c7-4ae8-9807-690931322907",
+        "last_modified": "2022-03-01T14:38:50.013000",
+        "latest": "https://www.data.gouv.fr/fr/datasets/r/a6919d2f-f4c7-4ae8-9807-690931322907",
+        "metrics": {
+          "views": 213
+        },
+        "mime": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "preview_url": null,
+        "published": "2022-03-01T14:38:00",
+        "schema": {
+          
+        },
+        "title": "Présentation des bases communale et départementale des principaux indicateurs des crimes et délits enregistrés par la police et la gendarmerie nationales",
+        "type": "documentation",
+        "url": "https://static.data.gouv.fr/resources/bases-communale-et-departementale-des-principaux-indicateurs-des-crimes-et-delits-enregistres-par-la-police-et-la-gendarmerie-nationales/20220301-143800/fichier-metadonnees-data-gouv-geographie-delinquance-032022.docx"
+      }
+    ],
+    "slug": "bases-communale-et-departementale-des-principaux-indicateurs-des-crimes-et-delits-enregistres-par-la-police-et-la-gendarmerie-nationales",
+    "spatial": {
+      "geom": null,
+      "granularity": "fr:commune",
+      "zones": [
+        "country-subset:fr:metro"
+      ]
+    },
+    "tags": [
+      "communes",
+      "crime",
+      "crimes-et-delits",
+      "departement",
+      "insecurite",
+      "statistiques",
+      "territoires",
+      "violence",
+      "vol"
+    ],
+    "temporal_coverage": {
+      "end": "2021-12-31",
+      "start": "2016-01-01"
+    },
+    "title": "Bases communale et départementale des principaux indicateurs des crimes et délits enregistrés par la police et la gendarmerie nationales ",
+    "uri": "https://www.data.gouv.fr/api/1/datasets/bases-communale-et-departementale-des-principaux-indicateurs-des-crimes-et-delits-enregistres-par-la-police-et-la-gendarmerie-nationales/"
+  }

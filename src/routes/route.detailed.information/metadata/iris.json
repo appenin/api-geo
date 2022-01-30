@@ -1,0 +1,10 @@
+{
+    "title": "IRIS à grande échelle (IRIS... GE) ",
+    "description": "Coédition INSEE et IGN, IRIS... GE est un fonds numérisé des IRIS définis par l'INSEE pour les besoins des recensements sur l'ensemble des communes de plus de 10 000 habitants et la plupart des communes de 5 000 à 10 000 habitants. IRIS... GE permet de faire le lien entre les données cartographiques et les données statistiques de l'INSEE.",
+    "created_at": "01/04/2015",
+    "last_modified": "01/11/2022",
+    "licence": "ouverte",
+    "download": "https://wxs.ign.fr/0aezh2n2288zcsb0gyx38xfs/telechargement/prepackage/IRIS-GE-TERRITOIRES-PACK_01-01-2022$IRIS-GE_2-0__SHP__FRA_2022-01-01/file/IRIS-GE_2-0__SHP__FRA_2022-01-01.7z",
+    "producer": "Insee et IGN",
+    "provider": "IGN"
+}

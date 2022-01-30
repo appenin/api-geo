@@ -1,0 +1,10 @@
+{
+    "title": "Recensement de la population - Base infracommunale (IRIS)",
+    "description": "La base infracommunale « Logement » fournit des données sur les caractéristiques des résidences principales, la date d'emménagement, la possession d'une voiture ainsi que le parc de logements, maisons et appartements.",
+    "created_at": "01/01/2018",
+    "last_modified": "01/01/2020",
+    "licence": "ouverte",
+    "download": "https://www.insee.fr/fr/statistiques/fichier/5650749/base-ic-logement-2018_csv.zip",
+    "producer": "Insee",
+    "provider": "Insee"
+}

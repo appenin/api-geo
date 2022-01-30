@@ -1,0 +1,10 @@
+{
+    "title": "BD TOPO®",
+    "description": "La modélisation 2D et 3D du territoire et de ses infrastructures sur l'ensemble du territoire français",
+    "created_at": "01/20/2019",
+    "last_modified": "01/20/2019",
+    "licence": "ouverte",
+    "download": "https://geoservices.ign.fr/bdtopo",
+    "producer": "IGN",
+    "provider": "IGN"
+}

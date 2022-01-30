@@ -1,0 +1,10 @@
+{
+    "title": "Tiles filosofi by appenin",
+    "description": "Restructuration géometrique des tuiles filosofi (insee) pour couvrir 100% du territoire métropolitain francais.",
+    "created_at": "12/01/2022",
+    "last_modified": "12/01/2022",
+    "licence": "fermée",
+    "download": "https://gitlab.com/appenin/falco-geodata/-/blob/main/tiles_filosofi_appenin/tiles_filosofi_appenin.7z",
+    "producer": "Appenin & insee",
+    "provider": "Appenin"
+}

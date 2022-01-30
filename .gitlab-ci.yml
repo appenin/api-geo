@@ -1,0 +1,25 @@
+image: 'registry.gitlab.com/appenin/docker-images/node-ci:node-18'
+
+stages:
+  - bump-version
+
+before_script:
+  - git config --global user.email "ci@appenin.fr"
+  - git config --global user.name "Appenin CI User"
+
+release:
+  stage: bump-version
+  script: 
+    - git fetch origin && git checkout -B "$CI_COMMIT_REF_NAME" "origin/$CI_COMMIT_REF_NAME"
+    - npm config set tag-version-prefix ''
+    - npm version patch -m "Update application version to %s" --allow-same-version
+    - NEW_APPLICATION_VERSION=$(node -p "require('./package').version")
+    - git push --atomic https://${APPENIN_CI_USER}:${APPENIN_CI_TOKEN}@gitlab.com/appenin/falco-geo.git $CI_COMMIT_REF_NAME $NEW_APPLICATION_VERSION
+    
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: '$CI_COMMIT_TITLE =~ /Update application version.*/'
+      when: never
+    - if: '$CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH'
+      when: on_success

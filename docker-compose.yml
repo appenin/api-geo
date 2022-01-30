@@ -1,0 +1,22 @@
+# docker-compose build
+version: '3.9'
+
+services:
+
+  postgres:
+    image: kartoza/postgis:14-3.3 #if you work on windows/linux replace by: postgis/postgis:14-3.3 / postgis/postgis:3.1.4-pg14-96
+    container_name: postgres
+    hostname: "postgres"
+    volumes:
+      - postgis-data:/var/lib/postgresql
+    environment:
+      POSTGRES_DBNAME: "geofalco"
+      POSTGRES_USER: "geouser"
+      POSTGRES_PASS: "geopassword"
+      POSTGRES_MULTIPLE_EXTENSIONS: "postgis,hstore,postgis_topology,postgis_raster,pgrouting"
+    ports:
+      - "5433:5432"
+
+volumes:
+  postgis-data:
+    driver: local

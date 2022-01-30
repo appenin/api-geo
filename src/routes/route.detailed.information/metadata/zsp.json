@@ -1,0 +1,130 @@
+{
+    "data": [
+      {
+        "acronym": null,
+        "archived": null,
+        "badges": [
+          
+        ],
+        "created_at": "2015-10-26T15:02:10.860000",
+        "deleted": null,
+        "description": "**Descriptif du contenu des fichiers \"ZSP\"**\n\nLes données proviennent de la Direction Générale de la Police Nationale, de la Direction Générale de la Gendarmerie Nationale et de la Préfecture de Police de Paris (pour les données sur Paris intra muros et la petite couronne : 92, 93, 94).\n\nPlus d'infos sur les ZSP : http://www.interieur.gouv.fr/Archives/Archives-des-actualites/2013/ZSP\n\nCe fichier est au format shapefile, en système de coordonnées WGS84 (EPSG:4326)\n\nChaque zone est matérialisée par une géométrie de type MultiPolygon \n\n- ID_ZSP : Identifiant unique de la zone\n- NOM_ZSP : Libellé de la zone\n- COMPETENCE : PN=Police, GN=Gendarmerie\n- DEPARTEMEN : Le département de la ZSP\n\nHistorique\n\n- Septembre 2015 : 1ère diffusion\n- 2018 : mise à jour",
+        "extras": {
+          
+        },
+        "frequency": "annual",
+        "frequency_date": "2016-10-26T14:58:54",
+        "harvest": null,
+        "id": "562e326288ee38257812613d",
+        "last_modified": "2019-02-06T10:10:21.148000",
+        "last_update": "2019-02-06T10:09:11.090000",
+        "license": "odc-odbl",
+        "metrics": {
+          "discussions": 0,
+          "followers": 5,
+          "reuses": 0,
+          "views": 35
+        },
+        "organization": {
+          "acronym": null,
+          "badges": [
+            {
+              "kind": "public-service"
+            },
+            {
+              "kind": "certified"
+            }
+          ],
+          "class": "Organization",
+          "id": "534fff91a3a7292c64a77f53",
+          "logo": "https://static.data.gouv.fr/avatars/64/efa546af334b4cbf07e36f694db4fe-original.png",
+          "logo_thumbnail": "https://static.data.gouv.fr/avatars/64/efa546af334b4cbf07e36f694db4fe-100.png",
+          "name": "Ministère de l'Intérieur et des Outre-Mer",
+          "page": "https://www.data.gouv.fr/fr/organizations/ministere-de-linterieur-et-des-outre-mer/",
+          "slug": "ministere-de-linterieur-et-des-outre-mer",
+          "uri": "https://www.data.gouv.fr/api/1/organizations/ministere-de-linterieur-et-des-outre-mer/"
+        },
+        "owner": null,
+        "page": "https://www.data.gouv.fr/fr/datasets/decoupage-des-zones-de-securite-prioritaires-zsp-1/",
+        "private": false,
+        "quality": {
+          "all_resources_available": true,
+          "dataset_description_quality": true,
+          "has_open_format": true,
+          "has_resources": true,
+          "license": true,
+          "resources_documentation": true,
+          "score": 0.8888888888888888,
+          "spatial": true,
+          "temporal_coverage": true,
+          "update_frequency": true,
+          "update_fulfilled_in_time": false
+        },
+        "resources": [
+          {
+            "checksum": {
+              "type": "sha1",
+              "value": "a4159fd8d49ea33df1efd0da721061f9ebf0573b"
+            },
+            "created_at": "2019-02-06T10:08:21.362000",
+            "description": "format shapefile, en système de coordonnées WGS84 (EPSG:4326)",
+            "extras": {
+              
+            },
+            "filesize": 286078,
+            "filetype": "file",
+            "format": "7z",
+            "harvest": null,
+            "id": "08c9c5cb-a671-4cc2-9e0c-ecf830bbed25",
+            "last_modified": "2019-02-06T10:09:11.090000",
+            "latest": "https://www.data.gouv.fr/fr/datasets/r/08c9c5cb-a671-4cc2-9e0c-ecf830bbed25",
+            "metrics": {
+              "views": 32
+            },
+            "mime": "application/x-7z-compressed",
+            "preview_url": null,
+            "published": "2019-02-06T10:08:21",
+            "schema": {
+              
+            },
+            "title": "Export des zones de sécurité prioritaires (ZSP) - 2018",
+            "type": "main",
+            "url": "https://static.data.gouv.fr/resources/decoupage-des-zones-de-securite-prioritaires-zsp-1/20190206-100821/zsp-2018.7z"
+          }
+        ],
+        "slug": "decoupage-des-zones-de-securite-prioritaires-zsp-1",
+        "spatial": {
+          "geom": null,
+          "granularity": "country",
+          "zones": [
+            "country:fr"
+          ]
+        },
+        "tags": [
+          "contours",
+          "gendarmerie",
+          "geo",
+          "geographie",
+          "geolocalisation",
+          "geolocalise",
+          "police",
+          "prefecture",
+          "securite-interieure",
+          "stsisi",
+          "zone",
+          "zsp"
+        ],
+        "temporal_coverage": {
+          "end": "2015-10-26",
+          "start": "2012-07-01"
+        },
+        "title": "Découpage des zones de sécurité prioritaires (ZSP)",
+        "uri": "https://www.data.gouv.fr/api/1/datasets/decoupage-des-zones-de-securite-prioritaires-zsp-1/"
+      }
+    ],
+    "next_page": null,
+    "page": 1,
+    "page_size": 20,
+    "previous_page": null,
+    "total": 1
+  }

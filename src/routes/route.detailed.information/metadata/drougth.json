@@ -1,0 +1,10 @@
+{
+    "title": "Retrait-gonflement des argiles",
+    "description": "La carte d'exposition au phénomène de retrait-gonflement des argiles couvre la France métropolitaine (hors ville de Paris).",
+    "created_at": "01/01/2022",
+    "last_modified": "01/01/2022",
+    "licence": "ouverte",
+    "download": "https://files.georisques.fr/argiles/AleaRG_Fxx_L93.zip",
+    "producer": "BRGM",
+    "provider": "BRGM"
+}

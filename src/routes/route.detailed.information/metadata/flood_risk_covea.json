@@ -1,0 +1,10 @@
+{
+    "title": "AZI_COVEA_2021_region",
+    "description": "Ce zonier est une carte au format vectoriel, composée d’une multitude de polygones couvrant le territoire France métropole, représentant des zones à risques inondation faible, fort, moyen et très fort, caractérisées par un code couleur, respectivement jaune, orange, rouge, noir.",
+    "created_at": "01/01/2021",
+    "last_modified": "01/01/2021",
+    "licence": "fermée",
+    "download": "https://gitlab.com/appenin/falco-geodata/-/blob/main/flood_risk/AZI_COVEA_2021_region.7z",
+    "producer": "Covéa",
+    "provider": "Covéa"
+}

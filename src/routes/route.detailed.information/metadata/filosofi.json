@@ -1,0 +1,127 @@
+{
+    "data": [
+      {
+        "acronym": null,
+        "archived": null,
+        "badges": [
+          
+        ],
+        "created_at": "2019-09-27T10:00:48.100000",
+        "deleted": null,
+        "description": "Ces données proviennent du dispositif sur les revenus localisés sociaux et fiscaux (FiLoSoFi).\n- Les bases contiennent 26 variables sur la structure par âge des individus, sur les caractéristiques des ménages et des logements et sur les revenus perçus au cours de l’année 2015. Le champ géographique est constitué de la France métropolitaine, de la Martinique et de La Réunion.\n- Le carroyage est une technique de quadrillage consistant à découper le territoire en carreaux pour y diffuser de l’information statistique à un niveau faiblement agrégé. Le maillage du territoire qui en résulte est plus ou moins fin selon la taille de carreau choisie. Le carroyage nécessite de disposer initialement de données pour lesquelles on connaît précisément la position géographique de chaque observation.\n- Les carreaux permettent de s’affranchir des limites administratives habituelles et peuvent être assemblés pour construire ou approcher n’importe quel zonage à façon. L’information statistique sur un tel zonage peut ensuite être facilement retrouvée en rassemblant les données des carreaux qui le constituent. Les carreaux ont également l’avantage d’être stables au fil du temps.\n- Chaque fichier compacté (format zip) contient les données pour les trois zones géographiques du champ (France métropolitaine, Martinique et La Réunion). Trois formats de fichier sont proposés : shapefile, geopackage ou csv. \n- Tous les indicateurs fournis sont par ailleurs visualisables sous forme de cartes sur le Geoportail, rubrique Economie et statistique https://www.geoportail.gouv.fr/donnees/niveau-de-vie \nIl est conseillé de lire attentivement la documentation complète sur ces données carroyées avant leur utilisation.\n\n\n",
+        "extras": {
+          
+        },
+        "frequency": "irregular",
+        "frequency_date": "2019-07-16T00:00:00",
+        "harvest": null,
+        "id": "5d8e16106f44410332a79994",
+        "last_modified": "2019-09-30T11:44:00.645000",
+        "last_update": "2019-09-27T10:03:59.189000",
+        "license": "lov2",
+        "metrics": {
+          "discussions": 2,
+          "followers": 2,
+          "reuses": 8,
+          "views": 19
+        },
+        "organization": {
+          "acronym": null,
+          "badges": [
+            {
+              "kind": "public-service"
+            },
+            {
+              "kind": "certified"
+            }
+          ],
+          "class": "Organization",
+          "id": "534fff81a3a7292c64a77e5c",
+          "logo": "https://static.data.gouv.fr/avatars/db/fbfd745ae543f6856ed59e3d44eb71-original.jpg",
+          "logo_thumbnail": "https://static.data.gouv.fr/avatars/db/fbfd745ae543f6856ed59e3d44eb71-100.jpg",
+          "name": "Institut National de la Statistique et des Etudes Economiques (Insee)",
+          "page": "https://www.data.gouv.fr/fr/organizations/institut-national-de-la-statistique-et-des-etudes-economiques-insee/",
+          "slug": "institut-national-de-la-statistique-et-des-etudes-economiques-insee",
+          "uri": "https://www.data.gouv.fr/api/1/organizations/institut-national-de-la-statistique-et-des-etudes-economiques-insee/"
+        },
+        "owner": null,
+        "page": "https://www.data.gouv.fr/fr/datasets/donnees-carroyees-issues-du-dispositif-sur-les-revenus-localises-fiscaux-et-sociaux-filosofi/",
+        "private": false,
+        "quality": {
+          "all_resources_available": true,
+          "dataset_description_quality": true,
+          "has_open_format": true,
+          "has_resources": true,
+          "license": true,
+          "resources_documentation": true,
+          "score": 1.0,
+          "spatial": true,
+          "temporal_coverage": true,
+          "update_frequency": true,
+          "update_fulfilled_in_time": true
+        },
+        "resources": [
+          {
+            "checksum": null,
+            "created_at": "2019-09-27T10:03:59.189000",
+            "description": "Chaque fichier compacté (format zip) contient les données pour les trois zones géographiques du champ (France métropolitaine, Martinique et La Réunion).",
+            "extras": {
+              "check:available": true,
+              "check:count-availability": 7,
+              "check:date": "2021-07-07T09:56:24.951000",
+              "check:headers:charset": "utf-8",
+              "check:headers:content-length": 64679,
+              "check:headers:content-type": "text/html",
+              "check:url": "https://www.insee.fr/fr/statistiques/4176281?sommaire=4176305"
+            },
+            "filesize": null,
+            "filetype": "remote",
+            "format": "csv shapefile geopackage",
+            "harvest": null,
+            "id": "aa50b408-49f4-4608-97fd-dd8fb21ef239",
+            "last_modified": "2019-09-27T10:03:59.189000",
+            "latest": "https://www.data.gouv.fr/fr/datasets/r/aa50b408-49f4-4608-97fd-dd8fb21ef239",
+            "metrics": {
+              "views": 70
+            },
+            "mime": null,
+            "preview_url": null,
+            "published": "2019-06-27T00:00:00",
+            "schema": {
+              
+            },
+            "title": "Données au carreau \"naturel\", de 200m et de 1 km",
+            "type": "main",
+            "url": "https://www.insee.fr/fr/statistiques/4176281?sommaire=4176305"
+          }
+        ],
+        "slug": "donnees-carroyees-issues-du-dispositif-sur-les-revenus-localises-fiscaux-et-sociaux-filosofi",
+        "spatial": {
+          "geom": null,
+          "granularity": "other",
+          "zones": [
+            "country:fr"
+          ]
+        },
+        "tags": [
+          "disparites-de-revenus",
+          "distribution-des-revenus",
+          "inegalites-de-revenus",
+          "menages-fiscaux",
+          "niveaux-de-revenus",
+          "pauvrete"
+        ],
+        "temporal_coverage": {
+          "end": "2015-12-31",
+          "start": "2015-01-01"
+        },
+        "title": "Données carroyées issues du dispositif sur les revenus localisés fiscaux et sociaux (FiLoSoFi)",
+        "uri": "https://www.data.gouv.fr/api/1/datasets/donnees-carroyees-issues-du-dispositif-sur-les-revenus-localises-fiscaux-et-sociaux-filosofi/"
+      }
+    ],
+    "next_page": null,
+    "page": 1,
+    "page_size": 20,
+    "previous_page": null,
+    "total": 1
+  }
