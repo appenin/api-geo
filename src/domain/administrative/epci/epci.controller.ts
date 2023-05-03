@@ -5,7 +5,7 @@ import { hasValidMunicipalityParams } from '../../../params/municipality.params'
 import { EpciService } from './epci.service';
 
 export class EpciController {
-  constructor(private readonly epciService: EpciService) {}
+  constructor(private readonly epciService: EpciService = EpciService.create()) {}
 
   async getEpciByCodeInsee(request: Request, h: ResponseToolkit) {
     if (!hasValidMunicipalityParams(request.params)) {

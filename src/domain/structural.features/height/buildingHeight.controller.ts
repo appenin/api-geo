@@ -4,7 +4,9 @@ import { IDAddressRequestParams } from '../../../params/IDAddress.params';
 import { BuildingHeightService } from './buildingHeight.service';
 
 export class BuildingHeightController {
-  constructor(private readonly buildingHeightService: BuildingHeightService) {}
+  constructor(
+    private readonly buildingHeightService: BuildingHeightService = BuildingHeightService.create(),
+  ) {}
 
   async getBuildingHeightFromIDAddress(request: Request, h: ResponseToolkit) {
     const { IDAddress } = request.params as IDAddressRequestParams;

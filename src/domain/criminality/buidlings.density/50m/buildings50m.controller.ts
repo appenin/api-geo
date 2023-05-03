@@ -5,7 +5,9 @@ import { hasValidCoordinates } from '../../../../params/coordinates.params';
 import { Buildings50mService } from './buildings50m.service';
 
 export class Buildings50mController {
-  constructor(private readonly building50mService: Buildings50mService) {}
+  constructor(
+    private readonly building50mService: Buildings50mService = Buildings50mService.create(),
+  ) {}
 
   async getBuildings50mByCoordinateLocation(request: Request, h: ResponseToolkit) {
     if (!hasValidCoordinates(request.params)) {

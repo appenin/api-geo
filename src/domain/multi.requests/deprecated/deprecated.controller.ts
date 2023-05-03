@@ -1,7 +1,7 @@
 import Boom from '@hapi/boom';
 import { Request, ResponseToolkit } from '@hapi/hapi';
 
-import { InseeAndIrisService } from '../../administrative/insee.iris/irisAndInsee.service';
+import { InseeAndIrisService } from '../../administrative/insee.iris/inseeAndIris.service';
 import { Buildings50mService } from '../../criminality/buidlings.density/50m/buildings50m.service';
 import { Buildings100mService } from '../../criminality/buidlings.density/100m/buildings100m.service';
 import { Buildings200mService } from '../../criminality/buidlings.density/200m/buildings200m.service';

@@ -4,7 +4,9 @@ import { IDAddressRequestParams } from '../../../params/IDAddress.params';
 import { PresenceOfBalconyService } from './presenceOfBalcony.service';
 
 export class PresenceOfBalconyController {
-  constructor(private readonly presenceOfBalconyService: PresenceOfBalconyService) {}
+  constructor(
+    private readonly presenceOfBalconyService: PresenceOfBalconyService = PresenceOfBalconyService.create(),
+  ) {}
 
   async getPresenceOfBalconyFromIDAddress(request: Request, h: ResponseToolkit) {
     const { IDAddress } = request.params as IDAddressRequestParams;

@@ -1,4 +1,5 @@
-import { Pool } from 'pg';
+import { poolWrapper } from '../../../config/database';
+import { PoolWrapper, StubbedPoolWrapper } from '../../../libs/pool-wrapper';
 
 interface DistanceToMonument {
   merime_distance_monument_historique_500min: number | null;
@@ -7,7 +8,7 @@ interface DistanceToMonument {
 const distanceToMonument: string = 'merime_distance_monument_historique_500min';
 
 export class DistanceToMonumentService {
-  constructor(private readonly database: Pool) {}
+  constructor(private readonly database: PoolWrapper) {}
 
   async getDistanceToMonumentFromIDAddress(IDAddress: string): Promise<DistanceToMonument> {
     const query = `
@@ -26,5 +27,15 @@ export class DistanceToMonumentService {
     }
 
     return rows[0];
+  }
+
+  static create() {
+    return new DistanceToMonumentService(poolWrapper);
+  }
+
+  static createStubWith(distanceToMonument?: DistanceToMonument) {
+    return new DistanceToMonumentService(
+      new StubbedPoolWrapper<DistanceToMonument>(distanceToMonument),
+    );
   }
 }

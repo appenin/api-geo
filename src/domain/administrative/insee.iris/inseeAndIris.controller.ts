@@ -2,7 +2,7 @@ import Boom from '@hapi/boom';
 import { Request, ResponseToolkit } from '@hapi/hapi';
 
 import { hasValidCoordinates } from '../../../params/coordinates.params';
-import { InseeAndIrisService } from './irisAndInsee.service';
+import { InseeAndIrisService } from './inseeAndIris.service';
 
 export class InseeAndIrisController {
   constructor(

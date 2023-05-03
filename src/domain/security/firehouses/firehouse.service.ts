@@ -1,4 +1,5 @@
-import { Pool } from 'pg';
+import { poolWrapper } from '../../../config/database';
+import { PoolWrapper, StubbedPoolWrapper } from '../../../libs/pool-wrapper';
 
 interface Firehouse {
   dggn_nombre_caserne_pompiers_commune: number | null;
@@ -7,7 +8,7 @@ interface Firehouse {
 const firehouseCount: string = 'dggn_nombre_caserne_pompiers_commune';
 
 export class FirehouseService {
-  constructor(private readonly database: Pool) {}
+  constructor(private readonly database: PoolWrapper) {}
 
   async getFirehousesByCodeInsee(codeInsee: string): Promise<Firehouse> {
     const query = `
@@ -26,5 +27,13 @@ export class FirehouseService {
     }
 
     return rows[0];
+  }
+
+  static create() {
+    return new FirehouseService(poolWrapper);
+  }
+
+  static createStubWith(firehouse?: Firehouse) {
+    return new FirehouseService(new StubbedPoolWrapper<Firehouse>(firehouse));
   }
 }

@@ -5,7 +5,7 @@ import { hasValidMunicipalityParams } from '../../../params/municipality.params'
 import { RegionService } from './region.service';
 
 export class RegionController {
-  constructor(private readonly regionService: RegionService) {}
+  constructor(private readonly regionService: RegionService = RegionService.create()) {}
 
   async getRegionByCodeInsee(request: Request, h: ResponseToolkit) {
     if (!hasValidMunicipalityParams(request.params)) {

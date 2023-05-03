@@ -1,21 +1,12 @@
-import { Request, ResponseToolkit, Server } from '@hapi/hapi';
+import { Request } from '@hapi/hapi';
 
+import { responseToolkitForTest } from '../../../libs/http';
 import { InseeAndIrisController } from './inseeAndIris.controller';
-import { InseeAndIrisService } from './irisAndInsee.service';
+import { InseeAndIrisService } from './inseeAndIris.service';
 
 describe('InseeAndIrisController', () => {
-  const server = new Server();
-
-  beforeAll(async () => {
-    await server.start();
-  });
-
-  afterAll(async () => {
-    await server.stop();
-  });
-
   it('should return insee and iris information for a given coordinate location', async () => {
-    // Arrange
+    // Given
     const lat = 48.85049165036697;
     const lon = 2.308362857670213;
 
@@ -28,20 +19,40 @@ describe('InseeAndIrisController', () => {
     const inseeAndIrisController = new InseeAndIrisController(inseeAndIrisService);
 
     const request = { params: { lat, lon } };
-    const h = {
-      response: (result: any) => ({
-        code: (statusCode: number) => ({ statusCode, source: result }),
-      }),
-    };
 
-    // Act
+    // When
     const { statusCode, source } = await inseeAndIrisController.getInseeAndIrisByCoordinateLocation(
       request as unknown as Request,
-      h as ResponseToolkit,
+      responseToolkitForTest,
     );
 
-    // Assert
+    // Then
     expect(statusCode).toBe(200);
-    expect(source).toBeDefined();
+    expect(source).toStrictEqual({
+      codeInsee: '75107',
+      codeIris: '8909',
+      municipalityName: 'Paris',
+      irisName: null,
+    });
+  });
+
+  it('should throw an error when an invalid coordinate location is given', async () => {
+    // Given
+    const inseeAndIrisService = InseeAndIrisService.createStubWith();
+    const lat = 0.0;
+    const lon = 10.0;
+    const inseeAndIrisController = new InseeAndIrisController(inseeAndIrisService);
+    const request = { params: { lat, lon } };
+
+    // When
+    const promise = inseeAndIrisController.getInseeAndIrisByCoordinateLocation(
+      request as unknown as Request,
+      responseToolkitForTest,
+    );
+
+    // Then
+    await expect(() => promise).rejects.toThrow(
+      '[!] Your coordinates are outside the France limits or are not in EPSG:4326',
+    );
   });
 });

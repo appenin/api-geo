@@ -1,6 +1,6 @@
-import { Pool } from 'pg';
-
+import { poolWrapper } from '../../../config/database';
 import { transformDistrictCodeToCommuneCode } from '../../../helpers/requestDistricts';
+import { PoolWrapper, StubbedPoolWrapper } from '../../../libs/pool-wrapper';
 
 interface Epci {
   code_epci: string | null;
@@ -11,12 +11,12 @@ const codeRegion: string = 'code_epci';
 const libRegion: string = 'lib_epci';
 
 export class EpciService {
-  constructor(private readonly database: Pool) {}
+  constructor(private readonly database: PoolWrapper) {}
 
   async getEpciByCodeInsee(codeInsee: string): Promise<Epci> {
     const codeInseeFromDistrict = transformDistrictCodeToCommuneCode(codeInsee);
     const query = `
-    SELECT 
+    SELECT
         admin_epci_2022.code_epci as ${codeRegion},
         admin_epci_2022.lib_epci as ${libRegion}
     FROM admin_epci_2022
@@ -33,5 +33,13 @@ export class EpciService {
     }
 
     return rows[0];
+  }
+
+  static create() {
+    return new EpciService(poolWrapper);
+  }
+
+  static createStubWith(epci?: Epci) {
+    return new EpciService(new StubbedPoolWrapper<Epci>(epci));
   }
 }

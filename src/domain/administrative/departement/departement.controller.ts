@@ -5,7 +5,9 @@ import { hasValidMunicipalityParams } from '../../../params/municipality.params'
 import { DepartementService } from './departement.service';
 
 export class DepartementController {
-  constructor(private readonly departmentService: DepartementService) {}
+  constructor(
+    private readonly departmentService: DepartementService = DepartementService.create(),
+  ) {}
 
   async getDepartmentByCodeInsee(request: Request, h: ResponseToolkit) {
     if (!hasValidMunicipalityParams(request.params)) {

@@ -1,20 +1,8 @@
-import { Server } from '@hapi/hapi';
-
-import { database } from '../../../config/database';
 import { LivingStandardController } from './livingStandard.controller';
 import { LivingStandardService } from './livingStandard.service';
+import { responseToolkitForTest } from '../../../libs/http';
 
 describe('LivingStandardController', () => {
-  const server = new Server();
-
-  beforeAll(async () => {
-    await server.start();
-  });
-
-  afterAll(async () => {
-    await server.stop();
-    await database.end();
-  });
 
   it('should return the living standard for a given coordinate location', async () => {
     // Arrange
@@ -27,17 +15,12 @@ describe('LivingStandardController', () => {
     const livingStandardController = new LivingStandardController(livingStandardService);
 
     const request = { params: { lat, lon } };
-    const h = {
-      response: (result: any) => ({
-        code: (statusCode: number) => ({ statusCode, source: result }),
-      }),
-    };
 
     // Act
     const { statusCode, source } =
       await livingStandardController.getLivingStandardByCoordinateLocation(
         request as any,
-        h as any,
+        responseToolkitForTest,
       );
 
     // Assert

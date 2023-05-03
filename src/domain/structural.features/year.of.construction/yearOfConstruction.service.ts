@@ -1,4 +1,5 @@
-import { Pool } from 'pg';
+import { poolWrapper } from '../../../config/database';
+import { PoolWrapper, StubbedPoolWrapper } from '../../../libs/pool-wrapper';
 
 interface YearOfConstruction {
   ffo_annee_construction: string | null;
@@ -7,7 +8,7 @@ interface YearOfConstruction {
 const yearOfConstruction: string = 'ffo_annee_construction';
 
 export class YearOfConstructionService {
-  constructor(private readonly database: Pool) {}
+  constructor(private readonly database: PoolWrapper) {}
 
   async getYearOfConstructionFromIDAddress(IDAddress: string): Promise<YearOfConstruction> {
     const query = `
@@ -26,5 +27,13 @@ export class YearOfConstructionService {
     }
 
     return rows[0];
+  }
+
+  static create() {
+    return new YearOfConstructionService(poolWrapper);
+  }
+
+  static createStubWith(result: YearOfConstruction) {
+    return new YearOfConstructionService(new StubbedPoolWrapper<YearOfConstruction>(result));
   }
 }

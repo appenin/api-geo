@@ -1,4 +1,5 @@
-import { Pool } from 'pg';
+import { poolWrapper } from '../../../config/database';
+import { PoolWrapper, StubbedPoolWrapper } from '../../../libs/pool-wrapper';
 
 interface PresenceOfBalcony {
   ademe_logement_type_avancee_balcon_max: string | null;
@@ -7,7 +8,7 @@ interface PresenceOfBalcony {
 const presenceOfBalcony: string = 'ademe_logement_type_avancee_balcon_max';
 
 export class PresenceOfBalconyService {
-  constructor(private readonly database: Pool) {}
+  constructor(private readonly database: PoolWrapper) {}
 
   async getPresenceOfBalconyFromIDAddress(IDAddress: string): Promise<PresenceOfBalcony> {
     const query = `
@@ -33,5 +34,15 @@ export class PresenceOfBalconyService {
     }
 
     return rows[0];
+  }
+
+  static create() {
+    return new PresenceOfBalconyService(poolWrapper);
+  }
+
+  static createStubWith(presenceOfBalcony?: PresenceOfBalcony) {
+    return new PresenceOfBalconyService(
+      new StubbedPoolWrapper<PresenceOfBalcony>(presenceOfBalcony),
+    );
   }
 }

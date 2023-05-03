@@ -1,4 +1,5 @@
-import { Pool } from 'pg';
+import { poolWrapper } from '../../../config/database';
+import { PoolWrapper, StubbedPoolWrapper } from '../../../libs/pool-wrapper';
 
 interface BuildingHeight {
   ign_hauteur_batiment: number | null;
@@ -7,7 +8,7 @@ interface BuildingHeight {
 const buildingsHeight: string = 'ign_hauteur_batiment';
 
 export class BuildingHeightService {
-  constructor(private readonly database: Pool) {}
+  constructor(private readonly database: PoolWrapper) {}
 
   async getBuildingHeightFromIDAddress(IDAddress: string): Promise<BuildingHeight> {
     const query = `
@@ -25,5 +26,13 @@ export class BuildingHeightService {
     }
 
     return rows[0];
+  }
+
+  static create() {
+    return new BuildingHeightService(poolWrapper);
+  }
+
+  static createStubWith(result: BuildingHeight) {
+    return new BuildingHeightService(new StubbedPoolWrapper<BuildingHeight>(result));
   }
 }

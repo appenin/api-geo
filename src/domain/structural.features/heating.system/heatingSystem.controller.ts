@@ -3,7 +3,9 @@ import { Request, ResponseToolkit } from '@hapi/hapi';
 import { HeatingSystemService } from './heatingSystem.service';
 
 export class HeatingSystemController {
-  constructor(private readonly heatingSystemService: HeatingSystemService) {}
+  constructor(
+    private readonly heatingSystemService: HeatingSystemService = HeatingSystemService.create(),
+  ) {}
 
   async getHeatingSytemFromIDAddress(request: Request, h: ResponseToolkit) {
     const { IDAddress } = request.params;

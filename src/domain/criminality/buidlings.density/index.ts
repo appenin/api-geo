@@ -8,8 +8,8 @@ import { Buildings200mService } from './200m/buildings200m.service';
 import { Buildings500mController } from './500m/buildings500m.controller';
 import { Buildings500mService } from './500m/buildings500m.service';
 
-export const buildings50mService = new Buildings50mService(database);
-export const buildings50mController = new Buildings50mController(buildings50mService);
+export const buildings50mService = Buildings50mService.create();
+export const buildings50mController = new Buildings50mController();
 
 export const buildings100mService = new Buildings100mService(database);
 export const buildings100mController = new Buildings100mController(buildings100mService);

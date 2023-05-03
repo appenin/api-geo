@@ -5,7 +5,7 @@ import { Request, ResponseToolkit } from '@hapi/hapi';
 import { hasValidMultiParams } from '../../../params/multi.params';
 import { DepartementService } from '../../administrative/departement/departement.service';
 import { EpciService } from '../../administrative/epci/epci.service';
-import { InseeAndIrisService } from '../../administrative/insee.iris/irisAndInsee.service';
+import { InseeAndIrisService } from '../../administrative/insee.iris/inseeAndIris.service';
 import { RegionService } from '../../administrative/region/region.service';
 import { Buildings50mService } from '../../criminality/buidlings.density/50m/buildings50m.service';
 import { Buildings100mService } from '../../criminality/buidlings.density/100m/buildings100m.service';

@@ -15,4 +15,8 @@ export class IframeWebmapService {
     const iframe = `<iframe src='${config.FALCO_WEBMAP}/#${zoom}/${lat}/${lon}' width='${width}' height='${height}' />`;
     return { iframe };
   }
+
+  static create() {
+    return new IframeWebmapService();
+  }
 }

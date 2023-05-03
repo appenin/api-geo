@@ -4,7 +4,7 @@ import { Request, ResponseToolkit } from '@hapi/hapi';
 import { hasValidCoordsCodeInseeParams } from '../../../params/coordsAndMunicipality.params';
 import { DepartementService } from '../../administrative/departement/departement.service';
 import { EpciService } from '../../administrative/epci/epci.service';
-import { InseeAndIrisService } from '../../administrative/insee.iris/irisAndInsee.service';
+import { InseeAndIrisService } from '../../administrative/insee.iris/inseeAndIris.service';
 import { RegionService } from '../../administrative/region/region.service';
 
 export const allowedAdministrativeElements = ['', 'insee-iris', 'epci', 'departement', 'region'];

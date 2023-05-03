@@ -5,7 +5,7 @@ import { hasValidMunicipalityParams } from '../../../params/municipality.params'
 import { FirehouseService } from './firehouse.service';
 
 export class FirehouseController {
-  constructor(private readonly firehouseService: FirehouseService) {}
+  constructor(private readonly firehouseService: FirehouseService = FirehouseService.create()) {}
 
   async getFirehousesByCodeInsee(request: Request, h: ResponseToolkit) {
     if (!hasValidMunicipalityParams(request.params)) {
