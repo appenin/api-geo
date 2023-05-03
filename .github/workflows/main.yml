@@ -2,7 +2,7 @@ name: install-and-build
 run-name: ${{ github.actor }}
 on: [push]
 jobs:
-  install-build
+  install-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
