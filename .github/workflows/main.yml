@@ -1,0 +1,14 @@
+name: install-and-build
+run-name: ${{ github.actor }}
+on: [push]
+jobs:
+  install-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: cp .env.example .env
+      - run: yarn install && yarn build
+      - run: yarn test
