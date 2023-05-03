@@ -9,5 +9,6 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
+      - run: cp .env.example .env
       - run: yarn install && yarn build
       - run: yarn test
