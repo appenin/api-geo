@@ -10,6 +10,6 @@ export class IframeWebmapController {
   async getIframe(request: Request, h: ResponseToolkit) {
     const { lat, lon, zoom, width, height } = request.params;
     const iframe = await this.iframeWebmapService.getIframe(lat, lon, zoom, width, height);
-    return h.response(iframe.iframe);
+    return h.response(iframe.iframe).code(200);
   }
 }
