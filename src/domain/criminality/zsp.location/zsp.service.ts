@@ -1,4 +1,5 @@
-import { Pool } from 'pg';
+import { poolWrapper } from '../../../config/database';
+import { PoolWrapper, StubbedPoolWrapper } from '../../../libs/pool-wrapper';
 
 interface Zsp {
   minterieur_zsp_presence: number | null;
@@ -7,14 +8,14 @@ interface Zsp {
 const zsp: string = 'minterieur_zsp_presence';
 
 export class ZspService {
-  constructor(private readonly database: Pool) {}
+  constructor(private readonly database: PoolWrapper) {}
 
   async getZspByCoordinateLocation(lat: number, lon: number): Promise<Zsp> {
     const point = `ST_GeomFromText('POINT(${lon} ${lat})', 4326)::geometry`;
     const query = `
     SELECT CASE WHEN EXISTS (
-      SELECT 1 
-      FROM repair_zsp 
+      SELECT 1
+      FROM repair_zsp
       WHERE ST_Contains(geom::geometry, ${point})
     ) THEN CAST(1 AS integer) ELSE CAST(0 AS integer) END as ${zsp};
     `;
@@ -25,5 +26,13 @@ export class ZspService {
     }
 
     return rows[0];
+  }
+
+  static create() {
+    return new ZspService(poolWrapper);
+  }
+
+  static createStubWith(zsp?: Zsp) {
+    return new ZspService(new StubbedPoolWrapper<Zsp>(zsp));
   }
 }

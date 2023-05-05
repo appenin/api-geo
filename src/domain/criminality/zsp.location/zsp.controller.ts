@@ -5,7 +5,7 @@ import { hasValidCoordinates } from '../../../params/coordinates.params';
 import { ZspService } from './zsp.service';
 
 export class ZspController {
-  constructor(private readonly zspService: ZspService) {}
+  constructor(private readonly zspService: ZspService = ZspService.create()) {}
 
   async getZspByCoordinateLocation(request: Request, h: ResponseToolkit) {
     if (!hasValidCoordinates(request.params)) {
