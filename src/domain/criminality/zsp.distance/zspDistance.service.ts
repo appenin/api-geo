@@ -1,4 +1,5 @@
-import { Pool } from 'pg';
+import { poolWrapper } from '../../../config/database';
+import { PoolWrapper, StubbedPoolWrapper } from '../../../libs/pool-wrapper';
 
 interface ZspDistance {
   minterieur_zsp_distance: number | null;
@@ -7,7 +8,7 @@ interface ZspDistance {
 const zspDistance: string = 'minterieur_zsp_distance';
 
 export class ZspDistanceService {
-  constructor(private readonly database: Pool) {}
+  constructor(private readonly database: PoolWrapper) {}
 
   async getZspDistanceByCoordinateLocation(lat: number, lon: number): Promise<ZspDistance> {
     const point = `ST_GeomFromText('POINT(${lon} ${lat})', 4326)::geometry`;
@@ -16,7 +17,7 @@ export class ZspDistanceService {
         ROUND(
           (ST_Distance(ST_Transform(${point}, 2154), ST_Transform(a.geom, 2154))::NUMERIC/1000), 3
         )::FLOAT as ${zspDistance}
-      FROM 
+      FROM
         repair_zsp a
       ORDER BY ST_Transform(${point}, 2154) <-> ST_Transform(a.geom, 2154)
       LIMIT 1;
@@ -28,5 +29,13 @@ export class ZspDistanceService {
     }
 
     return rows[0];
+  }
+
+  static create() {
+    return new ZspDistanceService(poolWrapper);
+  }
+
+  static createStubWith(zspDistance?: ZspDistance) {
+    return new ZspDistanceService(new StubbedPoolWrapper<ZspDistance>(zspDistance));
   }
 }
