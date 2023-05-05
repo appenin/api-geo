@@ -27,7 +27,7 @@ describe('Buildings50mController', () => {
     });
   });
 
-  it('', async () => {
+  it('should throw an error with incorrect coordinate location', async () => {
     // Given
     const lat = 0.0;
     const lon = 10.0;

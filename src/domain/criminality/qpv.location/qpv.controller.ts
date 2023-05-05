@@ -5,7 +5,7 @@ import { hasValidCoordinates } from '../../../params/coordinates.params';
 import { QpvService } from './qpv.service';
 
 export class QpvController {
-  constructor(private readonly qpvService: QpvService) {}
+  constructor(private readonly qpvService: QpvService = QpvService.create()) {}
 
   async getQpvByCoordinateLocation(request: Request, h: ResponseToolkit) {
     if (!hasValidCoordinates(request.params)) {

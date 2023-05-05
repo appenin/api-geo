@@ -32,6 +32,6 @@ export class Buildings200mService {
   }
 
   static createStubWith(buildingDensity?: BuildingDensity) {
-    return new Buildings200mService(new StubbedPoolWrapper(buildingDensity));
+    return new Buildings200mService(new StubbedPoolWrapper<BuildingDensity>(buildingDensity));
   }
 }
