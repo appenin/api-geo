@@ -5,7 +5,9 @@ import { hasValidMunicipalityParams } from '../../../params/municipality.params'
 import { RobberyIndexService } from './robberyIndex.service';
 
 export class RobberIndexController {
-  constructor(private readonly robberyIndexService: RobberyIndexService) {}
+  constructor(
+    private readonly robberyIndexService: RobberyIndexService = RobberyIndexService.create(),
+  ) {}
 
   async getRobberyIndexByCodeInsee(request: Request, h: ResponseToolkit) {
     if (!hasValidMunicipalityParams(request.params)) {
