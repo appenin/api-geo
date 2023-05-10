@@ -1,9 +1,8 @@
+import { responseToolkitForTest } from '../../../libs/http';
 import { LivingStandardController } from './livingStandard.controller';
 import { LivingStandardService } from './livingStandard.service';
-import { responseToolkitForTest } from '../../../libs/http';
 
 describe('LivingStandardController', () => {
-
   it('should return the living standard for a given coordinate location', async () => {
     // Arrange
     const lat = 48.85049165036697;
