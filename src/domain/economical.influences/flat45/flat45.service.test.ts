@@ -18,7 +18,7 @@ describe('Flat45Service', () => {
     expect(flatBuiltBefore1945.insee_proportion_residence_principale_appart_avant_1945).toBe(1);
   });
 
-  it('should return a null object with an invalide coordinate location', async () => {
+  it('should return a null object with an invalid coordinate location', async () => {
     // Given
     service = Flat45Service.createStubWith();
 

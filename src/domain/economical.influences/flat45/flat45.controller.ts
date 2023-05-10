@@ -5,7 +5,7 @@ import { hasValidCoordinates } from '../../../params/coordinates.params';
 import { Flat45Service } from './flat45.service';
 
 export class Flat45Controller {
-  constructor(private readonly flat45Service: Flat45Service) {}
+  constructor(private readonly flat45Service: Flat45Service = Flat45Service.create()) {}
 
   async getFlat45ByCoordinateLocation(request: Request, h: ResponseToolkit) {
     if (!hasValidCoordinates(request.params)) {

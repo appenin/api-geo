@@ -5,7 +5,7 @@ import { hasValidCoordinates } from '../../../params/coordinates.params';
 import { HouseholdService } from './household.service';
 
 export class HouseholdController {
-  constructor(private readonly householdService: HouseholdService) {}
+  constructor(private readonly householdService: HouseholdService = HouseholdService.create()) {}
 
   async getHouseholdByCoordinateLocation(request: Request, h: ResponseToolkit) {
     if (!hasValidCoordinates(request.params)) {
