@@ -36,6 +36,6 @@ export class HouseholdService {
   }
 
   static createStubWith(householdDensity?: HouseholdDensity) {
-    return new HouseholdService(new StubbedPoolWrapper(householdDensity));
+    return new HouseholdService(new StubbedPoolWrapper<HouseholdDensity>(householdDensity));
   }
 }
