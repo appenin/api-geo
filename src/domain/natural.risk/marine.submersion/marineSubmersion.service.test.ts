@@ -1,6 +1,6 @@
 import { SubmersionRiskService } from './marineSubmersion.service';
 
-describe('DroughtRiskService', () => {
+describe('SubmersionRiskService', () => {
   let service: SubmersionRiskService;
   const lat = 48.85049165036697;
   const lon = 2.308362857670213;
