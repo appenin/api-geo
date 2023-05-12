@@ -6,7 +6,9 @@ import { hasValidCoordinates } from '../../../params/coordinates.params';
 import { DroughtRiskService } from './droughtRisk.service';
 
 export class DroughtRiskController {
-  constructor(private readonly droughtRiskService: DroughtRiskService) {}
+  constructor(
+    private readonly droughtRiskService: DroughtRiskService = DroughtRiskService.create(),
+  ) {}
 
   async getDroughtRiskByCoordinateLocation(request: Request, h: ResponseToolkit) {
     if (!hasValidCoordinates(request.params)) {

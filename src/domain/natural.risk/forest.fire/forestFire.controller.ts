@@ -5,7 +5,7 @@ import { hasValidMunicipalityParams } from '../../../params/municipality.params'
 import { ForestFireService } from './forestFire.service';
 
 export class ForestFireController {
-  constructor(private readonly forestFireService: ForestFireService) {}
+  constructor(private readonly forestFireService: ForestFireService = ForestFireService.create()) {}
 
   async getForestFireByCodeInsee(request: Request, h: ResponseToolkit) {
     if (!hasValidMunicipalityParams(request.params)) {
