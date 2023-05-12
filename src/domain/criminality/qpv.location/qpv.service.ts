@@ -1,4 +1,5 @@
-import { Pool } from 'pg';
+import { poolWrapper } from '../../../config/database';
+import { PoolWrapper, StubbedPoolWrapper } from '../../../libs/pool-wrapper';
 
 interface Qpv {
   anct_qpv_presence: number | null;
@@ -7,14 +8,14 @@ interface Qpv {
 const qpv: string = 'anct_qpv_presence';
 
 export class QpvService {
-  constructor(private readonly database: Pool) {}
+  constructor(private readonly database: PoolWrapper) {}
 
   async getQpvByCoordinateLocation(lat: number, lon: number): Promise<Qpv> {
     const point = `ST_GeomFromText('POINT(${lon} ${lat})', 4326)::geometry`;
     const query = `
     SELECT CASE WHEN EXISTS (
-      SELECT 1 
-      FROM qpv_2018 
+      SELECT 1
+      FROM qpv_2018
       WHERE ST_Contains(geom::geometry, ${point})
     ) THEN CAST(1 AS integer) ELSE CAST(0 AS integer) END as ${qpv};
     `;
@@ -25,5 +26,13 @@ export class QpvService {
     }
 
     return rows[0];
+  }
+
+  static create() {
+    return new QpvService(poolWrapper);
+  }
+
+  static createStubWith(qpv?: Qpv) {
+    return new QpvService(new StubbedPoolWrapper<Qpv>(qpv));
   }
 }

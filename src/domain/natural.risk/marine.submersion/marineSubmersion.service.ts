@@ -1,4 +1,5 @@
-import { Pool } from 'pg';
+import { poolWrapper } from '../../../config/database';
+import { PoolWrapper, StubbedPoolWrapper } from '../../../libs/pool-wrapper';
 
 interface SubmersionRisk {
   marine_submersion: number | null;
@@ -7,14 +8,14 @@ interface SubmersionRisk {
 const submersion: string = 'marine_submersion';
 
 export class SubmersionRiskService {
-  constructor(private readonly database: Pool) {}
+  constructor(private readonly database: PoolWrapper) {}
 
   async getSubmersionRiskByCoordinateLocation(lat: number, lon: number): Promise<SubmersionRisk> {
     const point = `ST_GeomFromText('POINT(${lon} ${lat})', 4326)`;
     const query = `
     (
       SELECT intensity_level AS ${submersion}
-      FROM flood.marine_submersion 
+      FROM flood.marine_submersion
       WHERE ST_Contains(geom, ${point}) union select 0 as intensity_level
     ) order by ${submersion} desc limit 1;
     `;
@@ -26,5 +27,13 @@ export class SubmersionRiskService {
     }
 
     return rows[0];
+  }
+
+  static create() {
+    return new SubmersionRiskService(poolWrapper);
+  }
+
+  static createStubWith(submersionRisk?: SubmersionRisk) {
+    return new SubmersionRiskService(new StubbedPoolWrapper<SubmersionRisk>(submersionRisk));
   }
 }

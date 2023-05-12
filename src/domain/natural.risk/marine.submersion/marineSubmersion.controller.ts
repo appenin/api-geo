@@ -5,7 +5,9 @@ import { hasValidCoordinates } from '../../../params/coordinates.params';
 import { SubmersionRiskService } from './marineSubmersion.service';
 
 export class SubmersionRiskController {
-  constructor(private readonly submersionRiskService: SubmersionRiskService) {}
+  constructor(
+    private readonly submersionRiskService: SubmersionRiskService = SubmersionRiskService.create(),
+  ) {}
 
   async getSubmersionRiskByCoordinateLocation(request: Request, h: ResponseToolkit) {
     if (!hasValidCoordinates(request.params)) {

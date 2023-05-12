@@ -5,7 +5,9 @@ import { hasValidMunicipalityParams } from '../../../params/municipality.params'
 import { UrbanTypologyService } from './urbanTypology.service';
 
 export class UrbanTypologyController {
-  constructor(private readonly urbanTypologyService: UrbanTypologyService) {}
+  constructor(
+    private readonly urbanTypologyService: UrbanTypologyService = UrbanTypologyService.create(),
+  ) {}
 
   async getUrbanTypologyByCodeInsee(request: Request, h: ResponseToolkit) {
     if (!hasValidMunicipalityParams(request.params)) {
