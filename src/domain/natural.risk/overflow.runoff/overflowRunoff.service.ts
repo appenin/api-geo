@@ -37,6 +37,8 @@ export class OverflowRunoffRiskService {
   }
 
   static createStubWith(overflowRunoffRisk?: OverflowRunoffRisk) {
-    return new OverflowRunoffRiskService(new StubbedPoolWrapper(overflowRunoffRisk));
+    return new OverflowRunoffRiskService(
+      new StubbedPoolWrapper<OverflowRunoffRisk>(overflowRunoffRisk),
+    );
   }
 }

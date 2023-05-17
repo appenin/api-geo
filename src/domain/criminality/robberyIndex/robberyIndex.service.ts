@@ -3,11 +3,10 @@ import { transformDistrictCodeToCommuneCode } from '../../../helpers/requestDist
 import { PoolWrapper, StubbedPoolWrapper } from '../../../libs/pool-wrapper';
 
 interface Robbery {
-  minterieur_indicateur_crime_delit_commune_cambriolage_taux_pour_mille: number | null;
+  taux_crime_delit_commune_cambriolage_pour_mille: number | null;
 }
 
-const robberyIndex: string =
-  'minterieur_indicateur_crime_delit_commune_cambriolage_taux_pour_mille';
+const robberyIndex: string = 'taux_crime_delit_commune_cambriolage_pour_mille';
 
 export class RobberyIndexService {
   constructor(private readonly database: PoolWrapper) {}
@@ -18,13 +17,13 @@ export class RobberyIndexService {
     (
       SELECT crime_index_per_thousand_inhabitant::FLOAT as ${robberyIndex}
       FROM crime_index_computed_2022
-      WHERE code_insee = '${codeInseeFromDistrict}' union select 0
+      WHERE code_insee = $1::text union select 0
     ) order by ${robberyIndex} desc limit 1;
     `;
-    const { rows } = await this.database.query<Robbery>(query);
+    const { rows } = await this.database.query<Robbery>(query, [codeInseeFromDistrict]);
 
     if (!rows[0]) {
-      return { minterieur_indicateur_crime_delit_commune_cambriolage_taux_pour_mille: null };
+      return { taux_crime_delit_commune_cambriolage_pour_mille: null };
     }
 
     return rows[0];

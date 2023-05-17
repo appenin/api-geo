@@ -1,7 +1,6 @@
-
+import { poolWrapper } from '../../../config/database';
 import { transformDistrictCodeToCommuneCode } from '../../../helpers/requestDistricts';
 import { PoolWrapper, StubbedPoolWrapper } from '../../../libs/pool-wrapper';
-import { poolWrapper } from '../../../config/database';
 
 interface Department {
   code_departement: string | null;
