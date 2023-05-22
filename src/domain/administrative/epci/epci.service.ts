@@ -22,11 +22,11 @@ export class EpciService {
     FROM admin_epci_2022
     LEFT JOIN epci_2022
         ON admin_epci_2022.code_epci = epci_2022.epci
-    WHERE epci_2022.codgeo = '${codeInseeFromDistrict}'
+    WHERE epci_2022.codgeo = $1::text
     LIMIT 1;
     `;
 
-    const { rows } = await this.database.query<Epci>(query);
+    const { rows } = await this.database.query<Epci>(query, [codeInseeFromDistrict]);
 
     if (!rows[0]) {
       return { code_epci: null, lib_epci: null };

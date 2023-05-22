@@ -11,17 +11,17 @@ export class LivingStandardService {
   constructor(private readonly database: PoolWrapper) {}
 
   async getLivingStandardByCoordinateLocation(lat: number, lon: number): Promise<LivingStandard> {
-    const point = `ST_GeomFromText('POINT(${lon} ${lat})', 4326)::geometry`;
+    const point = `POINT(${lon} ${lat})`;
     const query = `
     (
       SELECT ROUND(niveaux_de_vie_moyen, 2)::float AS ${livingStandard}
       FROM tiles_filosofi_appenin
-      WHERE ST_Contains(geom::geometry, ${point})
+      WHERE ST_Contains(geom::geometry, ST_GeomFromText($1::text, 4326)::geometry)
       union select 0 as ${livingStandard}
     ) order by ${livingStandard} desc
     limit 1;
     `;
-    const { rows } = await this.database.query<LivingStandard>(query);
+    const { rows } = await this.database.query<LivingStandard>(query, [point]);
 
     if (!rows[0]) {
       return { insee_filosofi_niveaux_de_vie_moyen: null };

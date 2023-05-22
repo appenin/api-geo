@@ -22,11 +22,11 @@ export class RegionService {
     FROM admin_region_2022
     LEFT JOIN epci_2022
       ON admin_region_2022.code_region = epci_2022.reg
-    WHERE epci_2022.codgeo = '${codeInseeFromDistrict}'
+    WHERE epci_2022.codgeo = $1::text
     LIMIT 1;
     `;
 
-    const { rows } = await this.database.query<Region>(query);
+    const { rows } = await this.database.query<Region>(query, [codeInseeFromDistrict]);
 
     if (!rows[0]) {
       return { code_region: null, lib_region: null };

@@ -18,10 +18,10 @@ export class UrbanTypologyService {
     const query = `
     SELECT code_urban_typology as ${codeTypology}, lib_urban_typology as ${libTypology}
     FROM urban_typology
-    WHERE code_insee = '${codeInseeFromDistrict}';
+    WHERE code_insee = $1::text;
     `;
 
-    const { rows } = await this.database.query<UrbanTypology>(query);
+    const { rows } = await this.database.query<UrbanTypology>(query, [codeInseeFromDistrict]);
 
     if (!rows[0]) {
       return {

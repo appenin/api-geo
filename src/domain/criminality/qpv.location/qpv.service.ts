@@ -11,15 +11,15 @@ export class QpvService {
   constructor(private readonly database: PoolWrapper) {}
 
   async getQpvByCoordinateLocation(lat: number, lon: number): Promise<Qpv> {
-    const point = `ST_GeomFromText('POINT(${lon} ${lat})', 4326)::geometry`;
+    const point = `POINT(${lon} ${lat})`;
     const query = `
     SELECT CASE WHEN EXISTS (
       SELECT 1
       FROM qpv_2018
-      WHERE ST_Contains(geom::geometry, ${point})
+      WHERE ST_Contains(geom::geometry, ST_GeomFromText($1::text, 4326)::geometry)
     ) THEN CAST(1 AS integer) ELSE CAST(0 AS integer) END as ${qpv};
     `;
-    const { rows } = await this.database.query<Qpv>(query);
+    const { rows } = await this.database.query<Qpv>(query, [point]);
 
     if (!rows[0]) {
       return { anct_qpv_presence: null };

@@ -22,11 +22,11 @@ export class DepartementService {
     FROM admin_departement_2022
     LEFT JOIN epci_2022
         ON admin_departement_2022.code_departement = epci_2022.dep
-    WHERE epci_2022.codgeo = '${codeInseeFromDistrict}'
+    WHERE epci_2022.codgeo = $1::text
     LIMIT 1;
     `;
 
-    const { rows } = await this.database.query<Department>(query);
+    const { rows } = await this.database.query<Department>(query, [codeInseeFromDistrict]);
 
     if (!rows[0]) {
       return { code_departement: null, lib_departement: null };
