@@ -14,16 +14,16 @@ export class OverflowRunoffRiskService {
     lat: number,
     lon: number,
   ): Promise<OverflowRunoffRisk> {
-    const point = `ST_GeomFromText('POINT(${lon} ${lat})', 4326)`;
+    const point = `POINT(${lon} ${lat})`;
     const query = `
     (
       SELECT intensity_level AS ${overflowRunoff}
       FROM flood.overflow_runoff
-      WHERE ST_Contains(geom, ${point}) union select 0 as intensity_level
+      WHERE ST_Contains(geom, ST_GeomFromText($1::text, 4326)) union select 0 as intensity_level
     ) order by ${overflowRunoff} desc limit 1;
     `;
 
-    const { rows } = await this.database.query<OverflowRunoffRisk>(query);
+    const { rows } = await this.database.query<OverflowRunoffRisk>(query, [point]);
 
     if (!rows[0]) {
       return { overflow_runoff: null };
