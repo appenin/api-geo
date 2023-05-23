@@ -1,6 +1,3 @@
-import { Request, ResponseToolkit } from '@hapi/hapi';
-
-import { ElectricalConsumptionController } from './electricalConsumption.controller';
 import { ElectricalConsumptionService } from './electricalConsumption.service';
 
 describe('getElectricalConsumptionFromIDAddress', () => {
@@ -10,25 +7,12 @@ describe('getElectricalConsumptionFromIDAddress', () => {
     const electricalConsumptionServide = ElectricalConsumptionService.createStubWith({
       ademe_consommation_electrique_residentiel_par_pdl: 3925.547,
     });
-    const electricalConsumptionController = new ElectricalConsumptionController(
-      electricalConsumptionServide,
-    );
-    const request = { params: { idAddressTest } };
-    const h = {
-      response: (result: any) => ({
-        code: (statusCode: number) => ({ statusCode, source: result }),
-      }),
-    };
 
     // Act
-    const { statusCode, source } =
-      await electricalConsumptionController.getElectricalConsumptionFromIDAddress(
-        request as unknown as Request,
-        h as ResponseToolkit,
-      );
+    const electricalConsumption =
+      await electricalConsumptionServide.getElectricalConsumptionFromIDAddress(idAddressTest);
 
     // Assert
-    expect(statusCode).toBe(200);
-    expect(source).toBeDefined();
+    expect(electricalConsumption.ademe_consommation_electrique_residentiel_par_pdl).toBe(3925.547);
   });
 });
