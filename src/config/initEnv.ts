@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 
 interface Config {
   FALCO_GEO_PORT: number;
+  FALCO_GEO_HOST: string;
   FALCO_GEO_DB_HOST: string;
   FAlCO_GEO_NOTION_API_KEY: string;
   DATABASE_URL: string;

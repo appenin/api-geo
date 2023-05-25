@@ -18,10 +18,10 @@ export class UrbanUnitService {
     const query = `
         SELECT code_urban_unit as ${codeUnit}, lib_urban_unit as ${libUnit}
         FROM urban_unit
-        WHERE code_insee = '${codeInseeFromDistrict}';
+        WHERE code_insee = $1::text;
         `;
 
-    const { rows } = await this.database.query<UrbanUnit>(query);
+    const { rows } = await this.database.query<UrbanUnit>(query, [codeInseeFromDistrict]);
 
     if (!rows[0]) {
       return {

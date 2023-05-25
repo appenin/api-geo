@@ -5,7 +5,9 @@ import { hasValidMunicipalityParams } from '../../../params/municipality.params'
 import { ClimaticRegionService } from './climaticRegion.service';
 
 export class ClimaticRegionController {
-  constructor(private readonly climaticRegionService: ClimaticRegionService) {}
+  constructor(
+    private readonly climaticRegionService: ClimaticRegionService = ClimaticRegionService.create(),
+  ) {}
 
   async getClimateByCodeInsee(request: Request, h: ResponseToolkit) {
     if (!hasValidMunicipalityParams(request.params)) {

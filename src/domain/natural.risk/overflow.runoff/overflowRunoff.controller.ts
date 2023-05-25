@@ -5,7 +5,9 @@ import { hasValidCoordinates } from '../../../params/coordinates.params';
 import { OverflowRunoffRiskService } from './overflowRunoff.service';
 
 export class OverflowRunoffRiskController {
-  constructor(private readonly overflowRunoffRiskService: OverflowRunoffRiskService) {}
+  constructor(
+    private readonly overflowRunoffRiskService: OverflowRunoffRiskService = OverflowRunoffRiskService.create(),
+  ) {}
 
   async getOverflowRunoffRiskByCoordinateLocation(request: Request, h: ResponseToolkit) {
     if (!hasValidCoordinates(request.params)) {

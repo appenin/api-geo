@@ -10,17 +10,17 @@ const electricalConsumption: string = 'ademe_consommation_electrique_residentiel
 export class ElectricalConsumptionService {
   constructor(private readonly database: PoolWrapper) {}
 
-  async getElectricalConsumptionFromIDAddress(IDAddress: string): Promise<ElectricalConsumption> {
+  async getElectricalConsumptionFromIDAddress(idAddress: string): Promise<ElectricalConsumption> {
     const query = `
     SELECT batiment_groupe_dle_elec_2020.conso_res_par_pdl::float as ${electricalConsumption}
     FROM bdnb_v072_open_data.rel_batiment_groupe_adresse
     LEFT JOIN bdnb_v072_open_data.batiment_groupe_dle_elec_2020
     ON rel_batiment_groupe_adresse.batiment_groupe_id = batiment_groupe_dle_elec_2020.batiment_groupe_id
-    WHERE rel_batiment_groupe_adresse.cle_interop_adr = '${IDAddress}'
+    WHERE rel_batiment_groupe_adresse.cle_interop_adr = $1::text
     LIMIT 1;
     `;
 
-    const { rows } = await this.database.query<ElectricalConsumption>(query);
+    const { rows } = await this.database.query<ElectricalConsumption>(query, [idAddress]);
 
     if (!rows[0]) {
       return { ademe_consommation_electrique_residentiel_par_pdl: null };

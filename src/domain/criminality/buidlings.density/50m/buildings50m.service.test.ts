@@ -24,7 +24,10 @@ describe('Buildings50mService', () => {
     const lon = 10.0;
     buildings50mService = Buildings50mService.createStubWith();
     // When
-    const buildingsDensity = await buildings50mService.getBuildings50mByCoordinateLocation(lat, lon);
+    const buildingsDensity = await buildings50mService.getBuildings50mByCoordinateLocation(
+      lat,
+      lon,
+    );
     // Then
     expect(buildingsDensity.buildings_50m).toBeNull();
   });

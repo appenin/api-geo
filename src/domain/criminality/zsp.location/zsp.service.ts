@@ -11,15 +11,15 @@ export class ZspService {
   constructor(private readonly database: PoolWrapper) {}
 
   async getZspByCoordinateLocation(lat: number, lon: number): Promise<Zsp> {
-    const point = `ST_GeomFromText('POINT(${lon} ${lat})', 4326)::geometry`;
+    const point = `POINT(${lon} ${lat})`;
     const query = `
     SELECT CASE WHEN EXISTS (
       SELECT 1
       FROM repair_zsp
-      WHERE ST_Contains(geom::geometry, ${point})
+      WHERE ST_Contains(geom::geometry, ST_GeomFromText($1::text, 4326)::geometry)
     ) THEN CAST(1 AS integer) ELSE CAST(0 AS integer) END as ${zsp};
     `;
-    const { rows } = await this.database.query<Zsp>(query);
+    const { rows } = await this.database.query<Zsp>(query, [point]);
 
     if (!rows[0]) {
       return { minterieur_zsp_presence: null };

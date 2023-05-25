@@ -16,6 +16,11 @@ export class RobberIndexController {
     }
     const { codeInsee } = request.params;
     const robberyIndex = await this.robberyIndexService.getRobberyIndexByCodeInsee(codeInsee);
-    return h.response(robberyIndex).code(200);
+    return h
+      .response({
+        minterieur_indicateur_crime_delit_commune_cambriolage_taux_pour_mille:
+          robberyIndex.taux_crime_delit_commune_cambriolage_pour_mille,
+      })
+      .code(200);
   }
 }

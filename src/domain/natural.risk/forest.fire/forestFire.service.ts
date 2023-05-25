@@ -14,10 +14,10 @@ export class ForestFireService {
     const query = `
     SELECT exposed_to_forest_fire::boolean as ${forestFire}
     FROM gaspar_forest_fire
-    WHERE code_insee = '${codeInsee}';
+    WHERE code_insee = $1::text;
     `;
 
-    const { rows } = await this.database.query<ForestFire>(query);
+    const { rows } = await this.database.query<ForestFire>(query, [codeInsee]);
 
     if (!rows[0]) {
       return { gaspar_feu_foret: null };

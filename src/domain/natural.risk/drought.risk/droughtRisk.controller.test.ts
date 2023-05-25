@@ -25,7 +25,7 @@ describe('DroughtRiskController', () => {
       drought_risk: 0,
     });
   });
-  it('should throw an error with invalid insee code', async () => {
+  it('should throw an error with invalid coordinates', async () => {
     // Given
     const lat = 0.0;
     const lon = 10.0;

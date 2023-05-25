@@ -9,7 +9,7 @@ describe('RobberIndexController', () => {
     // Given
     const codeInsee = '01002';
     const robberyIndexService = RobberyIndexService.createStubWith({
-      minterieur_indicateur_crime_delit_commune_cambriolage_taux_pour_mille: 11.613,
+      taux_crime_delit_commune_cambriolage_pour_mille: 11.613,
     });
     const robberIndexController = new RobberIndexController(robberyIndexService);
     const request = { params: { codeInsee } };
