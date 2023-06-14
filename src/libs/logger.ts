@@ -1,6 +1,5 @@
 import pino from 'pino';
 
-import { sendToSentry } from './sentry';
 import { Optional } from './types';
 
 const PinoInstance = pino({
@@ -37,8 +36,8 @@ interface Logger {
   debug: (message: string, originalError?: unknown) => void;
   info: (message: string, originalError?: unknown) => void;
   warn: (message: string, originalError?: unknown) => void;
-  error: (message: string, originalError: unknown, allowCopyToSentry?: boolean) => void;
-  fatal: (message: string, originalError: unknown, allowCopyToSentry?: boolean) => void;
+  error: (message: string, originalError: unknown) => void;
+  fatal: (message: string, originalError: unknown) => void;
 }
 
 const logger: Logger = {
@@ -54,17 +53,11 @@ const logger: Logger = {
   warn: (message: string, originalError?: unknown): void => {
     log(message, originalError as Error, PinoInstance.warn.bind(PinoInstance));
   },
-  error: (message: string, originalError: unknown, allowCopyToSentry: boolean = true): void => {
+  error: (message: string, originalError: unknown): void => {
     log(message, originalError as Error, PinoInstance.error.bind(PinoInstance));
-    if (allowCopyToSentry) {
-      sendToSentry(message, originalError as Error);
-    }
   },
-  fatal: (message: string, originalError: unknown, allowCopyToSentry: boolean = true): void => {
+  fatal: (message: string, originalError: unknown): void => {
     log(message, originalError as Error, PinoInstance.fatal.bind(PinoInstance));
-    if (allowCopyToSentry) {
-      sendToSentry(message, originalError as Error);
-    }
   },
 };
 

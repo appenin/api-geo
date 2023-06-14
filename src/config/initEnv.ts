@@ -11,7 +11,6 @@ interface Config {
   FALCO_GEO_DB: string;
   FALCO_GEO_DB_PORT: number;
   FALCO_GEO_API_ENV: string;
-  FALCO_GEO_SENTRY_DSN: string;
   FALCO_WEBMAP: string;
 }
 
