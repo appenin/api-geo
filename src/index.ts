@@ -7,7 +7,6 @@ import * as dotenv from 'dotenv';
 import { pgisConfig, plugins } from './config';
 import { usecases } from './domain';
 import logger from './libs/logger';
-import { initSentry } from './libs/sentry';
 import { routes } from './routes';
 
 dotenv.config();
@@ -15,7 +14,6 @@ dotenv.config();
 const server = Hapi.server(pgisConfig);
 
 const init = async () => {
-  initSentry();
 
   server.bind(usecases);
 
