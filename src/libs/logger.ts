@@ -36,8 +36,8 @@ interface Logger {
   debug: (message: string, originalError?: unknown) => void;
   info: (message: string, originalError?: unknown) => void;
   warn: (message: string, originalError?: unknown) => void;
-  error: (message: string, originalError: unknown, allowCopyToSentry?: boolean) => void;
-  fatal: (message: string, originalError: unknown, allowCopyToSentry?: boolean) => void;
+  error: (message: string, originalError: unknown) => void;
+  fatal: (message: string, originalError: unknown) => void;
 }
 
 const logger: Logger = {
